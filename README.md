@@ -7,7 +7,7 @@ A basic periodic waveform synthesizer for generating the most common types of wa
 
 ```bash
 # Add the line below to the "Cargo.toml"
-periodicsynth = "0.1.0"
+periodicsynth = "0.1.4"
 ```
 
 ```rust

@@ -10,7 +10,7 @@ A basic periodic waveform synthesizer for generating the most common types of wa
 periodicsynth = "0.1.0"
 ```
 
-```rs
+```rust
 /**
  * A basic usage of the library, a triangle wave
  * with a frequency of 440hZ and samplerate of

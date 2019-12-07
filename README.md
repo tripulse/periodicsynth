@@ -6,7 +6,6 @@ A basic periodic waveform synthesizer for generating the most common types of wa
 ---
 
 ```bash
-# Add the line below to the "Cargo.toml"
 periodicsynth = "0.1.2"
 ```
 
@@ -19,11 +18,7 @@ periodicsynth = "0.1.2"
 use periodicsynth;
 
 fn main() {
-    /* Intialise an vector with 0 values. 
-       The length of the vector is the samplerate. */
     let mut samples = vec![0f64; 44100];
-
-    /* Synthesize a triangle wave with frequency of 440hZ. */
     periodicsynth::synth(&samples, periodicsynth::PereodicFunction::Traingle, 440.0);
 }
 ```

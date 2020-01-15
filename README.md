@@ -1,5 +1,5 @@
 # PeriodicSynth
-[![Build Status](https://travis-ci.org/shin-ts/periodicsynth.svg?branch=master)](https://travis-ci.org/shin-ts/periodicsynth)
+[![Build Status](https://travis-ci.org/tryamid/periodicsynth.svg?branch=master)](https://travis-ci.org/tryamid/periodicsynth)
 
 A basic periodic waveform synthesizer for generating the most common types of waveforms that a signal generator is able to generate. Basically, it mimics the capabalities of a signal generator.
 

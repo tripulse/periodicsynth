@@ -1,13 +1,9 @@
 # PeriodicSynth
 [![Build Status](https://travis-ci.org/tryamid/periodicsynth.svg?branch=master)](https://travis-ci.org/tryamid/periodicsynth)
 
-A basic periodic waveform synthesizer for generating the most common types of waveforms that a signal generator is able to generate. Basically, it mimics the capabalities of a signal generator.
+Periodic waveform synthesizer (like a signal-generator) implemented in Rust. This can generate most common types of signals *(e.g sine, square)*.
 
 ---
-
-```bash
-periodicsynth = "0.1.2"
-```
 
 ```rust
 /**

@@ -10,6 +10,7 @@ pub enum PerodicFunction {
     Sawtooth,
     /// This method is equavalient to intialising a vector with `0` values.
     Null,
+    Cosine
 }
 
 /// Synthesizes a periodic waveform with a arbitary frequency and samplerate.
@@ -20,6 +21,7 @@ pub enum PerodicFunction {
 /// - Square
 /// - Triangle
 /// - Sawtooth
+/// - Cosine
 /// 
 /// **Note:** the size of the output vector is considered the samplerate,
 /// the output vector must be resized before synthesizing.
@@ -30,6 +32,12 @@ pub enum PerodicFunction {
 /// * `freq` &mdash; Frequency of the function to oscillate on.
 pub fn synth(samples: &mut Vec<f64>, pfunc: PerodicFunction, freq: f64) {
     let sample_rate = samples.len();
+    
+    // Meanings of some commonly seen variables:
+    // n = current sample index,
+    // s = total number of samples,
+    // f = frequency.
+    // y = generated sample value.
     
     match pfunc {
         Sine => {
@@ -59,6 +67,13 @@ pub fn synth(samples: &mut Vec<f64>, pfunc: PerodicFunction, freq: f64) {
         Null => {
             for s in samples.iter_mut() {
                 *s = 0.0;
+            }
+        },
+        
+        // y = cos(PI * (n/s) * f)
+        Cosine => {
+            for (i, s) in samples.iter_mut().enumerate() {
+                *s = cos(PI * (n/s) * f);
             }
         }
     }

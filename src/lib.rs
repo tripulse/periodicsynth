@@ -73,7 +73,7 @@ pub fn synth(samples: &mut Vec<f64>, pfunc: PerodicFunction, freq: f64) {
         // y = cos(PI * (n/s) * f)
         Cosine => {
             for (i, s) in samples.iter_mut().enumerate() {
-                *s = cos(PI * (i as f64 / sample_rate as f64) * freq);
+                *s = (PI * (i as f64 / sample_rate as f64) * freq).cos();
             }
         }
     }

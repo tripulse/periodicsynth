@@ -1,5 +1,5 @@
 # PeriodicSynth
-[![Build Status](https://travis-ci.org/tryamid/periodicsynth.svg?branch=master)](https://travis-ci.org/tryamid/periodicsynth)
+[![Build Status](https://travis-ci.org/tripulse/periodicsynth.svg?branch=master)](https://travis-ci.org/tripulse/periodicsynth)
 
 Periodic waveform synthesizer (like a signal-generator) implemented in Rust. This can generate most common types of signals *(e.g sine, square)*.
 

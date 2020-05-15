@@ -10,7 +10,7 @@ for generating waveforms with an arbitrary samplerate which
 is translated into time-position between (0..1) and provided
 to the generator.
 
-Some functions are provided by default (eg. sine, consine,
+Some functions are provided by default (eg. sine, cosine,
 square, null). To implement a one follow this kind of syntax:
 
 ```rust

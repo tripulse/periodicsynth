@@ -9,7 +9,7 @@
 //! use periodicsynth::{sin, synth};
 //! 
 //! fn main()
-//! { let samp = synth(sin, 440f, 8000); }
+//! { let samp = synth(sin, 440.0f, 8000); }
 //! ```
 
 mod common;

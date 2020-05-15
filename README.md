@@ -1,8 +1,10 @@
 <h1 align=center><code>periodicsynth</code></h2>
 
 <p align=center>
-<a href='https://travis-ci.org/tripulse/periodicsynth'><img src='https://travis-ci.org/tripulse/periodicsynth.svg?branch=master'/></a>
-<img src='https://docs.rs/periodicsynth/badge.svg'/>
+<a href='https://travis-ci.org/tripulse/periodicsynth'>
+<img src='https://travis-ci.org/tripulse/periodicsynth.svg?branch=master'/></a>
+<a href='https://docs.rs/crate/periodicsynth'>
+<img src='https://docs.rs/periodicsynth/badge.svg'/></a>
 </p>
 
 A periodic waveform generator which calls arbitrary functions

@@ -1,6 +1,9 @@
 //! This crate is a minimalist crate to generate signal
 //! with arbitrary functions to a limited time-resolution.
 //! 
+//! Some functions are given by default (eg. square,
+//! sine, cosine, null).
+//! 
 //! # Example
 //! ```
 //! use periodicsynth::{sin, synth};
@@ -12,10 +15,8 @@
 mod common;
 pub use common::*;
 
-/// Synthesize a signal in a defined time-resolution
-/// which is controlled by the number of samples by
-/// by using those time-positions or a custom data
-/// structure to accomplish that.
+/// Synthesize a signal using a defined number of
+/// samples and a custom function.
 /// 
 /// # Arguments
 /// - `func` — function to use for callback to
@@ -26,7 +27,7 @@ pub use common::*;
 ///
 /// - `n` — number of samples to generate (controls
 /// the time-resolution).
-pub fn synth<'a, U: Copy, F: Fn(f64, &mut U) -> f64>
+pub fn synth<'a, U, F: Fn(f64, &mut U) -> f64>
 (func: F, data: &mut U, n: usize) -> Vec<f64> {
     let mut samples = Vec::<f64>::with_capacity(n);
     

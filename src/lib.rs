@@ -1,3 +1,14 @@
+//! This crate is a minimalist crate to generate signal
+//! with arbitrary functions to a limited time-resolution.
+//! 
+//! # Example
+//! ```
+//! use periodicsynth::{sin, synth};
+//! 
+//! fn main()
+//! { let samp = synth(sin, 440f, 8000); }
+//! ```
+
 mod common;
 pub use common::*;
 

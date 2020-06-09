@@ -1,34 +1,25 @@
-//! This crate is a minimalist crate to generate signal
-//! with arbitrary functions to a limited time-resolution.
-//! 
-//! Some functions are given by default (eg. square,
-//! sine, cosine, null).
+//! This crate is a minimalist crate to generate signal with arbitrary
+//! functions to a limited time-resolution. Some functions are given by
+//! default (eg. square, sine, cosine, null).
 //! 
 //! # Example
 //! ```
 //! use periodicsynth::{sin, synth};
-//! 
-//! fn main()
-//! { let samp = synth(sin, &mut 440f64, 8000); }
+//! let samp = synth(sin, &mut 440f64, 8000);
 //! ```
 
 mod common;
 pub use common::*;
 
-/// Synthesize a signal using a defined number of
-/// samples and a custom function.
+/// Synthesize a signal using a defined number of samples with a custom function.
 /// 
 /// # Arguments
-/// - `func` — function to use for callback to
-/// generate amplitude values.
-/// 
-/// - `data` — function specific mutable data/
-/// data-structure to pass-in.
-///
-/// - `n` — number of samples to generate (controls
-/// the time-resolution).
-pub fn synth<'a, U, F: Fn(f64, &mut U) -> f64>
-(func: F, data: &mut U, n: usize) -> Vec<f64> {
+/// - `func` — function to use for callback to generate amplitude values.
+/// - `data` — function specific mutable data/data-structure to pass-in.
+/// - `n` — number of samples to generate (controls the time-resolution).
+pub fn synth<U, F>(func: F, data: &mut U, n: usize) -> Vec<f64> 
+    where F: Fn(f64, &mut U) -> f64
+{
     let mut samples = Vec::<f64>::with_capacity(n);
     
     let step_factor = 1.0/n as f64;
